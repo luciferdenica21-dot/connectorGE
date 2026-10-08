@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { LANGS, SERVICES, useLang } from '../i18n.jsx'
-import { IconGlobe } from './icons.jsx'
+import useTheme from '../useTheme.js'
+import { IconGlobe, IconMoon, IconSun } from './icons.jsx'
 
 export default function Navbar({ menuOpen, onToggleMenu }) {
   const { lang, setLang, t } = useLang()
+  const [theme, toggleTheme] = useTheme()
   const [servicesOpen, setServicesOpen] = useState(false)
   const dropdownRef = useRef(null)
 
@@ -31,10 +33,10 @@ export default function Navbar({ menuOpen, onToggleMenu }) {
     }
   }, [servicesOpen])
 
-  const linkClass =     'rounded-lg px-3 py-2 text-sm font-light text-zinc-700 transition hover:bg-zinc-50 hover:text-brand-600'
+  const linkClass =     'rounded-lg px-3 py-2 text-sm font-light text-zinc-700 transition hover:bg-zinc-50 hover:text-brand-600 dark:text-zinc-300 dark:hover:bg-slate-800 dark:hover:text-brand-300'
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/95">
       {/* Полная ширина, без узкого контейнера */}
       <div className="flex h-16 w-full items-center justify-between px-4 sm:h-[72px] sm:px-6">
         <a href="#top" className="flex items-center" aria-label="CONNECTOR">
@@ -55,8 +57,10 @@ export default function Navbar({ menuOpen, onToggleMenu }) {
                 type="button"
                 onClick={() => setServicesOpen((open) => !open)}
                 aria-expanded={servicesOpen}
-                aria-haspopup="true"                 className={`flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-light transition hover:bg-zinc-50 hover:text-brand-600 ${
-                  servicesOpen ? 'bg-zinc-50 text-brand-600' : 'text-zinc-700'
+                aria-haspopup="true"                 className={`flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-light transition hover:bg-zinc-50 hover:text-brand-600 dark:text-zinc-300 dark:hover:bg-slate-800 dark:hover:text-brand-300 ${
+                  servicesOpen
+                    ? 'bg-zinc-50 text-brand-600 dark:bg-slate-800 dark:text-brand-300'
+                    : 'text-zinc-700'
                 }`}
               >
                 {t('nav.services')}
@@ -73,14 +77,14 @@ export default function Navbar({ menuOpen, onToggleMenu }) {
               </button>
 
               {servicesOpen && (
-                <div className="absolute right-0 top-full mt-2 w-80 rounded-2xl border border-zinc-200 bg-white p-2 shadow-2xl">
+                <div className="absolute right-0 top-full mt-2 w-80 rounded-2xl border border-zinc-200 bg-white p-2 shadow-2xl dark:border-slate-700 dark:bg-slate-900">
                   <ul>
                     {SERVICES.map((service) => (
                       <li key={service.id}>
                         <a
                           href={`#svc-${service.id}`}
                           onClick={() => setServicesOpen(false)}
-                          className="block rounded-xl px-3 py-2.5 text-sm leading-snug text-zinc-700 transition hover:bg-brand-50 hover:text-brand-700"
+                          className="block rounded-xl px-3 py-2.5 text-sm leading-snug text-zinc-700 transition hover:bg-brand-50 hover:text-brand-700 dark:text-zinc-300 dark:hover:bg-slate-800 dark:hover:text-brand-300"
                         >
                           {t(`services.${service.id}`)}
                         </a>
@@ -104,9 +108,20 @@ export default function Navbar({ menuOpen, onToggleMenu }) {
             onClick={nextLang}
             aria-label={t('nav.language')}
             title={t('nav.language')}
-            className="flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-3 py-2 text-zinc-900 transition hover:border-brand-500 hover:text-brand-600"
+            className="flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-3 py-2 text-zinc-900 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:bg-slate-900 dark:text-zinc-200 dark:hover:border-brand-400 dark:hover:text-brand-300"
           >
             <IconGlobe className="size-4" />             <span className="text-[12px] font-light uppercase tracking-widest">{lang}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={t('nav.theme')}
+            aria-pressed={theme === 'dark'}
+            title={t('nav.theme')}
+            className="flex size-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-900 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:bg-slate-900 dark:text-zinc-200 dark:hover:border-brand-400 dark:hover:text-brand-300"
+          >
+            {theme === 'dark' ? <IconSun className="size-[18px]" /> : <IconMoon className="size-[18px]" />}
           </button>
 
           <button
@@ -115,7 +130,7 @@ export default function Navbar({ menuOpen, onToggleMenu }) {
             aria-label={menuOpen ? t('nav.close') : t('nav.menu')}
             aria-expanded={menuOpen}
             aria-controls="site-menu"
-            className={`flex size-10 flex-col items-center justify-center gap-[5px] rounded-full border border-zinc-200 text-zinc-900 transition hover:border-brand-500 hover:text-brand-600 lg:hidden ${
+            className={`flex size-10 flex-col items-center justify-center gap-[5px] rounded-full border border-zinc-200 text-zinc-900 transition hover:border-brand-500 hover:text-brand-600 dark:border-slate-700 dark:text-zinc-200 dark:hover:border-brand-400 dark:hover:text-brand-300 lg:hidden ${
               menuOpen ? 'burger-open' : ''
             }`}
           >

@@ -5,6 +5,7 @@ import BurgerMenu from './components/BurgerMenu.jsx'
 import Hero from './components/Hero.jsx'
 import Services from './components/Services.jsx'
 import About from './components/About.jsx'
+import Contacts from './components/Contacts.jsx'
 import Footer from './components/Footer.jsx'
 
 export default function App() {
@@ -12,7 +13,7 @@ export default function App() {
 
   return (
     <LangProvider>
-      <div className="min-h-screen bg-white text-zinc-900 antialiased">
+      <div className="min-h-screen bg-white text-zinc-900 antialiased dark:bg-slate-900 dark:text-slate-100">
         <Navbar menuOpen={menuOpen} onToggleMenu={() => setMenuOpen((open) => !open)} />
         <BurgerMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
 
@@ -20,6 +21,7 @@ export default function App() {
           <Hero />
           <Services />
           <About />
+          <Contacts />
         </main>
 
         <Footer />

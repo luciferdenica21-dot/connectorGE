@@ -8,6 +8,7 @@ const messages = {
     'nav.menu': 'Меню',
     'nav.close': 'Закрыть',
     'nav.language': 'Язык',
+    'nav.theme': 'Тёмная тема',
     'nav.services': 'Услуги',
     'nav.about': 'О компании',
     'nav.contacts': 'Контакты',
@@ -32,10 +33,12 @@ const messages = {
     'hero.order': 'Здесь вы можете заказать:',
 
     'about.title': 'О компании',
-    'about.lead': 'Полный цикл обработки — от чертежа до готовой детали',
+    'about.lead': 'CONNECTOR — производственная база полного цикла',
     'about.p1':
-      'CONNECTOR — производственная компания полного цикла. Мы берём на себя раскрой, механическую обработку, сварку и покрытие деталей: от единичных образцов до серийного производства.',
+      'CONNECTOR объединяет в единую систему полный спектр технологий металлообработки и работы с листовыми материалами. Мы закрываем весь цепной процесс внутри одной площадки: от проработки конструкторской документации и раскроя до точной механообработки, сварки и финишного защитного покрытия.',
     'about.p2':
+      'Автоматизированный парк станков с ЧПУ и инженерный контроль на каждом этапе позволяют нам реализовывать сложные технологические задачи — от единичных прототипов и авторских архитектурных элементов до крупносерийных промышленных партий со строгим соблюдением геометрии и допусков.',
+    'about.p3':
       'Работаем по договору, предоставляем документы с НДС, соблюдаем сроки и гарантируем точность на всех операциях — лазерная резка, гибка, ЧПУ-фрезеровка, сварка и порошковая окраска.',
     'about.point1': 'Сроки от 1 дня',
     'about.point1sub': 'Срочные партии и образцы',
@@ -44,12 +47,21 @@ const messages = {
     'about.point3': 'По договору и с НДС',
     'about.point3sub': 'Документы и гарантия качества',
     'about.contact': 'Связаться с нами',
+
+    'contacts.title': 'Контакты',
+    'contacts.lead':
+      'Свяжитесь с нами любым удобным способом — отвечаем ежедневно с 9:00 до 22:00. Расскажем о возможностях, сроках и стоимости по вашему чертежу.',
+    'contacts.hours': 'Ежедневно с 9:00 до 22:00',
+    'contacts.response': 'Ответим в течение рабочего дня',
+    'contacts.call': 'Позвонить',
+    'contacts.write': 'Написать',
   },
 
   en: {
     'nav.menu': 'Menu',
     'nav.close': 'Close',
     'nav.language': 'Language',
+    'nav.theme': 'Dark theme',
     'nav.services': 'Services',
     'nav.about': 'About us',
     'nav.contacts': 'Contacts',
@@ -74,10 +86,12 @@ const messages = {
     'hero.order': 'You can order here:',
 
     'about.title': 'About us',
-    'about.lead': 'Full cycle — from drawing to finished part',
+    'about.lead': 'CONNECTOR — a full-cycle manufacturing facility',
     'about.p1':
-      'CONNECTOR is a full-cycle manufacturing company. We handle cutting, machining, welding and coating of parts — from one-off prototypes to serial production.',
+      'CONNECTOR brings the full range of metalworking and sheet-material technologies into a single system. We cover the entire production chain on one site — from engineering documentation and cutting to precision machining, welding and the final protective coating.',
     'about.p2':
+      'Our automated CNC machine park and engineering control at every stage let us deliver complex manufacturing tasks — from one-off prototypes and custom architectural elements to large-scale industrial batches with strict geometry and tolerance compliance.',
+    'about.p3':
       'We work under contract, provide VAT documents, meet deadlines and guarantee accuracy at every operation — laser cutting, bending, CNC milling, welding and powder coating.',
     'about.point1': 'From 1 day',
     'about.point1sub': 'Urgent batches and prototypes',
@@ -86,12 +100,21 @@ const messages = {
     'about.point3': 'Contract and VAT',
     'about.point3sub': 'Documents and quality warranty',
     'about.contact': 'Contact us',
+
+    'contacts.title': 'Contacts',
+    'contacts.lead':
+      'Reach us any way you prefer — we reply every day from 9:00 to 22:00. We will walk you through capabilities, lead times and pricing for your drawing.',
+    'contacts.hours': 'Every day from 9:00 to 22:00',
+    'contacts.response': 'We reply within the same business day',
+    'contacts.call': 'Call us',
+    'contacts.write': 'Message us',
   },
 
   ge: {
     'nav.menu': 'მენიუ',
     'nav.close': 'დახურვა',
     'nav.language': 'ენა',
+    'nav.theme': 'მუქი თემა',
     'nav.services': 'სერვისები',
     'nav.about': 'ჩვენ შესახებ',
     'nav.contacts': 'კონტაქტები',
@@ -116,10 +139,12 @@ const messages = {
     'hero.order': 'აქ შეგიძლიათ შეუკვეთოთ:',
 
     'about.title': 'ჩვენ შესახებ',
-    'about.lead': 'სრული ციკლის დამუშავება — ნახაზიდან მზა დეტალამდე',
+    'about.lead': 'CONNECTOR — სრული ციკლის საწარმო ბაზა',
     'about.p1':
-      'CONNECTOR — სრული ციკლის საწარმოო კომპანია. ჩვენ ვიღებთ სამუშაოს დეტალების ამოჭრას, მექანიკურ დამუშავებას, შედუღებასა და დაფარვას: ცალკეული ნიმუშებიდან სერიულ წარმოებამდე.',
+      'CONNECTOR აერთიანებს ლითონისა და ფურცლოვანი მასალების დამუშავების სრულ სპექტრს ერთ სისტემაში. ჩვენ ვფარავთ მთელ საწარმოო ციკლს ერთ მოედანზე: საკონსტრუქციო დოკუმენტაციის დამუშავებიდან და ამოჭრიდან ზუსტ მექანიკურ დამუშავებამდე, შედუღებამდე და საბოლოო დამცავ საფარამდე.',
     'about.p2':
+      'CNC დანადგარების ავტომატიზებული პარკი და ინჟინრული კონტროლი ყოველ ეტაპზე გვაძლევს საშუალებას განვახორციელოთ რთული საწარმოო ამოცანები — ერთეული პროტოტიპებიდან და ავტორული არქიტექტურული ელემენტებიდან მსხვილ სერიულ სამრეწველო პარტიებამდე, გეომეტრიისა და ტოლერანსების მკაცრი დაცვით.',
+    'about.p3':
       'ვმუშაობთ ხელშეკრულებით, ვაწვდით დოკუმენტებს დღგ-ით, ვიცავთ ვადებს და ვიძლევით სიზუსტის გარანტიას ყველა ოპერაციაზე — ლაზერული ჭრა, მოხვევა, CNC ფრეზერება, შედუღება და ფხვნილოვანი შეღება.',
     'about.point1': 'ვადები 1 დღიდან',
     'about.point1sub': 'სასწრაფო პარტიები და ნიმუშები',
@@ -128,6 +153,14 @@ const messages = {
     'about.point3': 'ხელშეკრულებით და დღგ-ით',
     'about.point3sub': 'დოკუმენტები და ხარისხის გარანტია',
     'about.contact': 'დაგვიკავშირდით',
+
+    'contacts.title': 'კონტაქტები',
+    'contacts.lead':
+      'დაგვიკავშირდით ნებისმიერი მოსახერხებელი გზით — პასუხს ვცემთ ყოველდღე 9:00-დან 22:00-მდე. მოგითხრობთ შესაძლებლობებზე, ვადებსა და ფასებზე თქვენი ნახაზის მიხედვით.',
+    'contacts.hours': 'ყოველდღე 9:00-დან 22:00-მდე',
+    'contacts.response': 'პასუხს ვცემთ სამუშაო დღის განმავლობაში',
+    'contacts.call': 'დარეკეთ',
+    'contacts.write': 'მოგვწერეთ',
   },
 }
 

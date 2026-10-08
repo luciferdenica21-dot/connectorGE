@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+/* Тёмная тема по классу на <html> (переключатель в навбаре) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Локальные шрифты из public/fonts */
 @font-face {
   font-family: 'Roboto Condensed';
@@ -57,6 +60,12 @@ body {
   font-weight: 300; /* весь основной текст — light */
   background-color: #fff;
   color: #18181b;
+}
+
+/* Тёмно-синяя тема (класс .dark на <html>): фон — глубокий navy */
+html.dark body {
+  background-color: #0f172a;
+  color: #e2e8f0;
 }
 
 /* Грузинский язык — Noto Sans Georgian вместо Roboto Condensed */

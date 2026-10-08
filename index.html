@@ -10,6 +10,14 @@
       content="CONNECTOR — производственные услуги по вашим запросам. Изготовление деталей любой сложности от 1 дня: лазерная резка, гибка, ЧПУ-фрезеровка, сварка, порошковая окраска."
     />
     <title>CONNECTOR — производственные услуги</title>
+    <script>
+      // Применяем сохранённую тему до первой отрисовки — без мигания
+      try {
+        if (localStorage.getItem('connector.theme') === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

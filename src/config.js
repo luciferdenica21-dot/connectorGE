@@ -7,5 +7,4 @@ export const WHATSAPP_URL = 'https://wa.me/995591160685'
 export const EMAIL = 'useconnector@gmail.com'
 export const EMAIL_URL = 'mailto:useconnector@gmail.com'
 
-// Facebook: добавим позже по запросу.
-export const FACEBOOK_URL = 'https://www.facebook.com/'
+export const FACEBOOK_URL = 'https://www.facebook.com/Useconnector/'

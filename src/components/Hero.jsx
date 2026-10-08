@@ -13,7 +13,7 @@ function ServicesSlide({ activeIndex, align = 'center', tone = 'white' }) {
       <span
         key={service.id}         className={`chip-in inline-flex whitespace-nowrap rounded-full text-[14px] font-light sm:text-[15px] lg:text-base ${
           tone === 'dark'
-            ? 'text-black'
+            ? 'text-black dark:text-slate-100'
             : 'text-white [text-shadow:0_1px_8px_rgba(0,0,0,0.55)]'
         }`}
       >
@@ -77,20 +77,20 @@ export default function Hero() {
   }, [index])
 
   return (
-    <section id="top" className="flex min-h-[100svh] flex-col bg-white lg:flex-row">
+    <section id="top" className="flex min-h-[100svh] flex-col bg-white lg:flex-row dark:bg-slate-900">
       {/* ПК: левая колонка на белом фоне — заголовок, текст, кнопки */}
       <div className="hidden w-1/2 flex-col px-8 pb-26 pt-24 xl:px-14 lg:flex">
         <div className="flex min-h-0 flex-1 items-center">
           <div className="w-full">
-            <h1 className="font-display leading-[1.03] text-zinc-900">
+            <h1 className="font-display leading-[1.03] text-zinc-900 dark:text-slate-100">
               <span className="brand-gradient-text block text-[clamp(2.5rem,5.5vw,5.5rem)] font-bold uppercase tracking-tight">
                 {t('hero.brand')}
-              </span>               <span className="mt-3 block text-[clamp(1.25rem,2vw,2.1rem)] font-light text-zinc-800">
+              </span>               <span className="mt-3 block text-[clamp(1.25rem,2vw,2.1rem)] font-light text-zinc-800 dark:text-slate-300">
                 {t('hero.title')}
               </span>
             </h1>
 
-            <p className="mt-8 max-w-2xl text-base leading-relaxed text-zinc-600 xl:text-[17px]">
+            <p className="mt-8 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-300 xl:text-[17px]">
               {t('hero.subtitle')}
             </p>
           </div>
@@ -109,7 +109,7 @@ export default function Hero() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-xl border border-zinc-300 bg-white px-6 py-4 text-sm font-light text-zinc-900 transition hover:border-brand-500 hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
+            className="inline-flex items-center justify-center rounded-xl border border-zinc-300 bg-white px-6 py-4 text-sm font-light text-zinc-900 transition hover:border-brand-500 hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:border-brand-400 dark:hover:text-brand-300"
           >
             {t('hero.ctaWhatsapp')}
           </a>
@@ -181,7 +181,7 @@ export default function Hero() {
 
       {/* МОБ: фраза под видео — его высота ужимается автоматически (flex-1) */}
       <div className="mx-auto w-full max-w-6xl px-4 pt-5 sm:px-6 lg:hidden">
-        <p className="mx-auto w-fit rounded-2xl border-2 border-zinc-300 bg-white px-5 py-2.5 text-center text-[17px] font-normal text-zinc-900 shadow-sm sm:text-lg">
+        <p className="mx-auto w-fit rounded-2xl border-2 border-zinc-300 bg-white px-5 py-2.5 text-center text-[17px] font-normal text-zinc-900 shadow-sm sm:text-lg dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100">
           {t('hero.order')}
         </p>
       </div>
@@ -206,7 +206,7 @@ export default function Hero() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex flex-1 items-center justify-center rounded-xl border border-zinc-300 bg-white px-6 py-4 text-sm font-light text-zinc-900 transition hover:border-brand-500 hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
+            className="inline-flex flex-1 items-center justify-center rounded-xl border border-zinc-300 bg-white px-6 py-4 text-sm font-light text-zinc-900 transition hover:border-brand-500 hover:text-brand-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:border-brand-400 dark:hover:text-brand-300"
           >
             {t('hero.ctaWhatsapp')}
           </a>

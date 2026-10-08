@@ -5,17 +5,17 @@ function Block({ block }) {
   switch (block.k) {
     case 'h':
       return (
-        <h4 className="mt-7 text-[11px] font-normal uppercase tracking-[0.2em] text-brand-600">
+        <h4 className="mt-7 text-[11px] font-normal uppercase tracking-[0.2em] text-brand-600 dark:text-brand-400">
           {block.v}
         </h4>
       )
     case 'p':
-      return <p className="mt-3 text-[15px] leading-relaxed text-zinc-600">{block.v}</p>
+      return <p className="mt-3 text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-300">{block.v}</p>
     case 'list':
       return (
         <ul className="mt-3 space-y-2">
           {block.items.map((item, i) => (
-            <li key={i} className="text-[15px] leading-relaxed text-zinc-600">
+            <li key={i} className="text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-300">
               {item}
             </li>
           ))}
@@ -28,17 +28,17 @@ function Block({ block }) {
           <div className="clear-both" aria-hidden="true" />
           <div className="mt-8">
             {block.label && (
-              <p className="text-[11px] font-light uppercase tracking-[0.2em] text-zinc-500">
+              <p className="text-[11px] font-light uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
                 {block.label}
               </p>
             )}
             {/* Рамка во всю ширину, с отступом сверху */}
-            <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+            <div className="rounded-2xl border border-zinc-200 bg-zinc-50 p-4 dark:border-slate-700 dark:bg-slate-800">
               <div className="flex flex-wrap gap-2">
                 {block.items.map((item, i) => (
                   <span
                     key={i}
-                    className="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-[15px] font-light text-brand-700"
+                    className="rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-[15px] font-light text-brand-700 dark:border-brand-700 dark:bg-brand-800/40 dark:text-brand-300"
                   >
                     {item}
                   </span>
@@ -94,7 +94,7 @@ function ServicePhoto({ service, photoLeft, alt }) {
           текст обтекает фото и после него выходит на всю ширину.
           Мобайл: фото 4:3 со скруглением над текстом (как было). */}
       <div
-        className={`group relative mb-6 aspect-4/3 cursor-zoom-in overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-100 lg:mb-0 lg:aspect-auto lg:h-[500px] lg:w-[500px] lg:rounded-none ${
+        className={`group relative mb-6 aspect-4/3 cursor-zoom-in overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-100 dark:border-slate-700 dark:bg-slate-800 lg:mb-0 lg:aspect-auto lg:h-[500px] lg:w-[500px] lg:rounded-none ${
           photoLeft ? 'lg:float-left lg:mr-8' : 'lg:float-right lg:ml-8'
         }`}
         onClick={() => setZoom(true)}
@@ -207,7 +207,7 @@ export default function Services() {
   const { lang, t } = useLang()
 
   return (
-    <section className="border-t border-zinc-200 bg-white">
+    <section className="border-t border-zinc-200 bg-white dark:border-slate-800 dark:bg-slate-900">
       {/* Контейнер во всю ширину — как в Hero (px-4 sm:px-6 lg:px-8 xl:px-14) */}
       <div className="w-full px-4 py-16 sm:px-6 sm:py-20 lg:px-8 xl:px-14">
         <div className="mt-12 space-y-16 sm:mt-16 lg:mt-20 lg:space-y-24">
@@ -227,11 +227,11 @@ export default function Services() {
                   alt={t(`services.${service.id}`)}
                 />
 
-                <h3 className="font-display text-[clamp(1.3rem,3.4vw,1.9rem)] font-normal uppercase leading-tight text-zinc-900">
+                <h3 className="font-display text-[clamp(1.3rem,3.4vw,1.9rem)] font-normal uppercase leading-tight text-zinc-900 dark:text-slate-100">
                   {t(`services.${service.id}`)}
                 </h3>
 
-                <p className="mt-4 text-[15px] leading-relaxed text-zinc-600">{details.lead}</p>
+                <p className="mt-4 text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-300">{details.lead}</p>
 
                 {details.blocks.map((block, i) => (
                   <Block key={i} block={block} />

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { SERVICES, useLang } from '../i18n.jsx'
-import { PHONE_DISPLAY, PHONE_TEL } from '../config.js'
+import { PHONE_DISPLAY, PHONE_TEL, PXD_URL } from '../config.js'
 import { IconClose, IconPhone } from './icons.jsx'
 
 export default function BurgerMenu({ open, onClose }) {
@@ -8,9 +8,17 @@ export default function BurgerMenu({ open, onClose }) {
 
   // Якорная навигация из меню: снимаем overflow-блокировку синхронно,
   // иначе браузер не может проскроллить по хешу в момент клика.
-  const handleNav = () => {
+  // Если хеш уже совпадает с целью, перехода не происходит — скроллим вручную.
+  const handleNav = (event) => {
     document.body.style.overflow = ''
     onClose()
+    const href = event.currentTarget.getAttribute('href')
+    if (href && href.startsWith('#') && window.location.hash === href) {
+      event.preventDefault()
+      const target = document.querySelector(href)
+      if (target) target.scrollIntoView({ behavior: 'smooth' })
+      else window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   }
 
   useEffect(() => {
@@ -63,6 +71,14 @@ export default function BurgerMenu({ open, onClose }) {
         </div>
 
         <div className="no-scrollbar flex-1 overflow-y-auto px-5 py-6">
+          <a
+            href="#top"
+            onClick={handleNav}
+            className="block rounded-xl px-3 py-3 text-[15px] font-light leading-snug text-zinc-800 transition hover:bg-brand-50 hover:text-brand-700 dark:text-zinc-200 dark:hover:bg-slate-800 dark:hover:text-brand-300"
+          >
+            {t('nav.home')}
+          </a>
+
           <ul className="space-y-0.5">
             {SERVICES.map((service) => (
               <li key={service.id}>
@@ -103,7 +119,14 @@ export default function BurgerMenu({ open, onClose }) {
             </span>             <span className="text-[13px] font-light text-white/85">{PHONE_DISPLAY}</span>
           </a>
         </div>         <div className="border-t border-zinc-200 px-5 py-4 text-center text-[10px] font-light uppercase tracking-[0.3em] text-zinc-400 dark:border-slate-700 dark:text-zinc-500">
-          {t('menu.credit')}
+          <a
+            href={PXD_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="transition hover:text-brand-600 dark:hover:text-brand-400"
+          >
+            {t('menu.credit')}
+          </a>
         </div>
       </aside>
     </div>

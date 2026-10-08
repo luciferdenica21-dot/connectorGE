@@ -33,6 +33,13 @@ export default function Navbar({ menuOpen, onToggleMenu }) {
     }
   }, [servicesOpen])
 
+  // «Главная»: если хеш уже #top, браузер не перескроллит — делаем вручную.
+  const handleHome = (event) => {
+    event.preventDefault()
+    window.history.replaceState(null, '', '#top')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   const linkClass =     'rounded-lg px-3 py-2 text-sm font-light text-zinc-700 transition hover:bg-zinc-50 hover:text-brand-600 dark:text-zinc-300 dark:hover:bg-slate-800 dark:hover:text-brand-300'
 
   return (
@@ -52,6 +59,9 @@ export default function Navbar({ menuOpen, onToggleMenu }) {
         <div className="flex items-center gap-1 sm:gap-2">
           {/* ПК-навигация */}
           <nav className="hidden items-center gap-1 lg:flex" aria-label={t('nav.menu')}>
+            <a href="#top" onClick={handleHome} className={linkClass}>
+              {t('nav.home')}
+            </a>
             <div className="relative" ref={dropdownRef}>
               <button
                 type="button"

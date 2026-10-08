@@ -8,3 +8,6 @@ export const EMAIL = 'useconnector@gmail.com'
 export const EMAIL_URL = 'mailto:useconnector@gmail.com'
 
 export const FACEBOOK_URL = 'https://www.facebook.com/Useconnector/'
+
+// PXD STUDIO — автор дизайна; credit в футере и бургер-меню.
+export const PXD_URL = 'https://t.me/MichaelPiliaev'
